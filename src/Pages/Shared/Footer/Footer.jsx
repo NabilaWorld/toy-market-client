@@ -4,12 +4,12 @@ import logo from '../../../assets/logo.png'
 const Footer = () => {
     return (
         <div className='bg-neutral'>
-            <footer className="footer p-10   text-neutral-content">
+            <footer className="footer p-10 text-neutral-content">
 
                 
                 <div>
 
-                    <img className='h-12 w-30 rounded-lg bg-transparent' src={logo} alt="" />
+                    <img className='h-20 w-34 rounded-full ' src={logo} alt="" />
                     <p className='text-2xl font-bold'>Girls Cooking Toy</p>
 
                    

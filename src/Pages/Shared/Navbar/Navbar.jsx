@@ -4,7 +4,7 @@ import logo from '../../../assets/logo.png'
 const Navbar = () => {
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-neutral p-5 text-neutral-content ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,7 +19,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                    <img className='md:h-12 ml-2 md:w-30 h-8 w-28 rounded-lg bg-transparent' src={logo} alt="" />
+                    <img className='md:h-20 ml-2 md:w-34 h-12 w-30 rounded-full bg-transparent' src={logo} alt="" />
 
                     <p className='text-2xl font-bold ml-3'>Cooking Toy</p>
 
