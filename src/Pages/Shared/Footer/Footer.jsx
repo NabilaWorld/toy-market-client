@@ -6,10 +6,10 @@ const Footer = () => {
         <div className='bg-neutral'>
             <footer className="footer p-10   text-neutral-content">
 
-                <img className='h-12 w-30 rounded-lg bg-transparent' src={logo} alt="" />
+                
                 <div>
 
-
+                    <img className='h-12 w-30 rounded-lg bg-transparent' src={logo} alt="" />
                     <p className='text-2xl font-bold'>Girls Cooking Toy</p>
 
                    
