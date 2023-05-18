@@ -91,15 +91,19 @@ const Registration = () => {
 
                     <div className="flex items-center justify-between">
 
-                        <input type="submit" className="btn btn-warning rounded-lg w-full" value='Log In' />
+                        <input type="submit" className="btn btn-warning rounded-lg w-full" value='Register' />
 
                     </div>
 
                     <p className='mt-5 text-center text-blue-500'> <Link to='/login'>Go To The Log In Page </Link> </p>
                 </form>
 
+                <br />
+                {errors && <p className='text-center text-red-700'>{errors}</p>}
+               {success && <p className='text-center text-green-700'>{success}</p>}
 
             </div>
+            
         </div>
     );
 };

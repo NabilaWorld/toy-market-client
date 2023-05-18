@@ -76,7 +76,13 @@ const Login = () => {
                 </form>
 
                 <button onClick={handleGoogleLogIn} className="btn btn-warning w-80 mt-5 rounded-lg"> <FaGoogle className='mr-5 text-blue-500'></FaGoogle> Google</button>
+
+                    <br />
+                <p className='text-center text-red-700 font-bold'> {error} </p>
+               <p className='text-center text-green-700 font-bold'> {success} </p>
             </div>
+
+            
 
         </div>
     );
