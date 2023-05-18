@@ -1,6 +1,6 @@
 import React from 'react';
 
-import img1 from '../../../assets/img1.jpg'
+import img1 from '../../../assets/7064300_R_SET.jpg'
 import img2 from '../../../assets/img2.jpg'
 import img3 from '../../../assets/img3.jpg'
 import img4 from '../../../assets/img4.jpg'
@@ -11,6 +11,7 @@ const Gallery = () => {
     
     return (
         <div>
+            <br />
             <h1 className='my-16 text-center text-3xl font-bold'>COOKING TOY GALLERY</h1>
             <div className='grid grid-cols-1 my-10 md:mx-16 md:grid-cols-3 gap-4 rounded-lg '>
 
@@ -42,7 +43,7 @@ const Gallery = () => {
             </div>
 
 
-            <div className='grid grid-cols-1 my-10 md:mx-16 md:grid-cols-3 gap-4 rounded-lg mt-20'>
+            <div className='grid grid-cols-1 my-10 md:mx-16 md:grid-cols-3 gap-4 rounded-lg md:mt-20'>
 
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure><img src={img4} alt="img1" className='h-80 w-80 ' />
