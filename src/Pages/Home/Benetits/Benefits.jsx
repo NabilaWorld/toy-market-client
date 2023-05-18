@@ -6,7 +6,7 @@ const Benefits = () => {
             <br />
             <h1 className='text-center font-bold text-xl my-10'>Girl's cooking toys offer numerous benefits for children's development:</h1>
 
-            <ul className='md:mx-40 mx-5'>
+            <ul className='md:mx-40 mx-5 bg-gray-100 rounded-lg border-2 p-5'>
                 <li> <b>1. Skill development:</b> Cooking toys encourage the development of fine motor skills as children manipulate utensils, pots, and pans. They also learn hand-eye coordination while pouring, stirring, and measuring ingredients.</li> <br />
 
                 <li> <b>2. Creativity and imagination:</b> Cooking toys provide a platform for imaginative play, allowing children to experiment with different recipes and create their own culinary masterpieces. They can pretend to be chefs, restaurant owners, or hosts of a cooking show, fostering creativity and storytelling skills.</li> <br />
