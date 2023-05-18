@@ -1,71 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Cart from '../Cart/Cart';
+import Cart_2 from '../Cart_2/Cart_2';
+import Cart_3 from '../Cart_3/Cart_3';
 
 const ShopCategory = () => {
+
+    const [carts, setCarts] = useState([])
+    useEffect(() => {
+        fetch('toy.json')
+            .then(res => res.json())
+            .then(data => setCarts(data))
+            .catch(error => console.log(error));
+    }, []);
+
     return (
-        <div>
-            <br /> <br />
+        <div> <br /> <br />
 
-            <h1 className='text-center font-bold text-3xl'>Shop by category</h1>
+        <h1 className='text-center font-bold text-3xl my-10'>Shop by category</h1>
+            <Tabs className='mx-16 mt-10 font-bold'>
 
-            <Tabs className='mx-10 my-10 font-bold'>
                 <TabList>
-                    <Tab>Food Toy</Tab>
-                    <Tab>KitchenWare Toy</Tab>
-                    <Tab>Wash Basin Toy</Tab>
+                    <Tab>Cooking Food Toy</Tab>
+                    <Tab>Wash Besin Toy</Tab>
+                    <Tab>Gas Stove Toy</Tab>
                 </TabList>
 
-                <br /> <br />
+                <TabPanel>
+                    <div className='grid md:grid-cols-3 md:ml-40 md:mx-32 ml-5 gap-5  '>
+                        {
+                            carts.map(cart => <Cart
+                                key={cart.id}
+                                cart={cart}
+                            ></Cart>)
+                        }
+                    </div>
+                </TabPanel>
+
                 <TabPanel>
 
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Name: </h2>
-                            <p>Price:</p>
-                            <p>Rating:</p>
-
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-warning rounded-lg">View Details</button>
-                            </div>
-                        </div>
+                    <div className='grid md:grid-cols-3 md:ml-40 md:mx-32 ml-5 gap-5  '>
+                        {
+                            carts.map(cart => <Cart_2
+                                key={cart.id}
+                                cart={cart}
+                            ></Cart_2>)
+                        }
                     </div>
 
                 </TabPanel>
 
                 <TabPanel>
 
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </TabPanel>
-
-                <TabPanel>
-
-                    <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">Shoes!</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
+                    <div className='grid md:grid-cols-3 md:ml-40 md:mx-32 ml-5 gap-5  '>
+                        {
+                            carts.map(cart => <Cart_3
+                                key={cart.id}
+                                cart={cart}
+                            ></Cart_3>)
+                        }
                     </div>
 
                 </TabPanel>
             </Tabs>
-
-
         </div>
     );
 };

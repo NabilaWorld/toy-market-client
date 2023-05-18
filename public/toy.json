@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "picture_1": "https://rukminim1.flixcart.com/image/416/416/k572gsw0/role-play-toy/g/p/9/pretend-play-kids-wash-up-kitchen-sink-accessories-playset-toy-original-imafnxucebfyfvue.jpeg?q=70",
+        "name_1": "Product Name",
+        "price_1": 19.99,
+        "rating_1": 4.5,
+
+        "picture_2": "https://mybtoys.com/wp-content/uploads/BX2070_LS_A.jpg",
+        "name_2": "Product Name",
+        "price_2": 19.99,
+        "rating_2": 4.5,
+
+        "picture_3": "https://m.media-amazon.com/images/I/61FfVsn6SEL._SY450_.jpg",
+        "name_3": "Product Name",
+        "price_3": 19.99,
+        "rating_3": 4.5
+    },
+    {
+        "id": 2,
+        "picture_1": "https://rukminim1.flixcart.com/image/416/416/k572gsw0/role-play-toy/g/p/9/pretend-play-kids-wash-up-kitchen-sink-accessories-playset-toy-original-imafnxucebfyfvue.jpeg?q=70",
+        "name_1": "Product Name",
+        "price_1": 19.99,
+        "rating_1": 4.5,
+
+
+        "picture_2": "https://mybtoys.com/wp-content/uploads/BX2070_LS_A.jpg",
+        "name_2": "Product Name",
+        "price_2": 19.99,
+        "rating_2": 4.5,
+
+        "picture_3": "https://m.media-amazon.com/images/I/61FfVsn6SEL._SY450_.jpg",
+        "name_3": "Product Name",
+        "price_3": 19.99,
+        "rating_3": 4.5
+    },
+    {
+        "id": 3,
+        "picture_1": "https://rukminim1.flixcart.com/image/416/416/k572gsw0/role-play-toy/g/p/9/pretend-play-kids-wash-up-kitchen-sink-accessories-playset-toy-original-imafnxucebfyfvue.jpeg?q=70",
+        "name_1": "Product Name",
+        "price_1": 19.99,
+        "rating_1": 4.5,
+
+        "picture_2": "https://mybtoys.com/wp-content/uploads/BX2070_LS_A.jpg",
+        "name_2": "Product Name",
+        "price_2": 19.99,
+        "rating_2": 4.5,
+
+        "picture_3": "https://m.media-amazon.com/images/I/61FfVsn6SEL._SY450_.jpg",
+        "name_3": "Product Name",
+        "price_3": 19.99,
+        "rating_3": 4.5
+    }
+]
