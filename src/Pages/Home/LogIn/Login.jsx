@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const Login = () => {
+    const { googleLogIn} = useContext(AuthContext);
+
+
+    // google log in
+    const handleGoogleLogIn = () =>{
+        googleLogIn()
+        .then(result => {
+            const googleUser = result.user;
+            console.log(googleUser);
+            
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
     return (
         <div>
             <div className="flex flex-col items-center pt-20 min-h-screen bg-gray-200">
@@ -24,7 +41,7 @@ const Login = () => {
                     <p className='mt-5 text-center text-blue-500'> <Link to='/registration'>Go To Registration Page </Link> </p>
                 </form>
 
-                <button className="btn btn-warning w-80 mt-5 rounded-lg"> <FaGoogle className='mr-5 text-blue-500'></FaGoogle> Google</button>
+                <button onClick={handleGoogleLogIn} className="btn btn-warning w-80 mt-5 rounded-lg"> <FaGoogle className='mr-5 text-blue-500'></FaGoogle> Google</button>
             </div>
 
         </div>
