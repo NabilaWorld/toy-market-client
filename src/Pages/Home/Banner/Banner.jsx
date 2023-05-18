@@ -7,7 +7,7 @@ const Banner = () => {
             <img
                 src={imgage}
                 alt="Banner"
-                className="w-[1220px] my-5 md:ml-16 h-[600px]"
+                className="w-[1220px] my-5 rounded-lg md:ml-16 h-[600px]"
             />
             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                 <div className="bg-black bg-opacity-50 p-4 text-white text-center">
