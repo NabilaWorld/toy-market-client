@@ -27,9 +27,6 @@ const Login = () => {
                 <button className="btn btn-warning w-80 mt-5 rounded-lg"> <FaGoogle className='mr-5 text-blue-500'></FaGoogle> Google</button>
             </div>
 
-            
-
-
         </div>
     );
 };
