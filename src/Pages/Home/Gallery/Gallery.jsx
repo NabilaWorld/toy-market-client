@@ -12,7 +12,7 @@ const Gallery = () => {
     return (
         <div>
             <br />
-            <h1 className='my-16 text-center text-3xl font-bold'>COOKING TOY GALLERY</h1>
+            <h1 className='my-16 text-center text-3xl font-bold bg-orange-300 py-3 md:mx-[500px] mx-5 px-2 rounded-full'>COOKING TOY GALLERY</h1>
             <div className='grid grid-cols-1 my-10 md:mx-16 md:grid-cols-3 gap-4 rounded-lg '>
 
                 <div className="card w-96 bg-base-100 shadow-xl">

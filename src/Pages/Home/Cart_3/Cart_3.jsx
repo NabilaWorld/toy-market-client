@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart_3 = ({cart}) => {
-    const { picture_3, name_3, price_3, rating_3 } = cart;
+    const { _id,picture_3, name_3, price_3, rating_3 } = cart;
     return (
         <div>
             <div className='flex md:gap-20 mt-12'>
@@ -14,7 +15,9 @@ const Cart_3 = ({cart}) => {
                     <p>Price: {price_3} </p>
                     <p>Rating: {rating_3} </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-warning rounded-lg">View Details</button>
+                        <Link to={`/stove_details/${_id}`}>
+                          <button className="btn btn-warning rounded-lg">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
