@@ -9,7 +9,7 @@ const ShopCategory = () => {
 
     const [carts, setCarts] = useState([])
     useEffect(() => {
-        fetch('toy.json')
+        fetch('http://localhost:5000/toy')
             .then(res => res.json())
             .then(data => setCarts(data))
             .catch(error => console.log(error));
@@ -19,12 +19,12 @@ const ShopCategory = () => {
         <div> <br /> <br />
 
         <h1 className='text-center font-bold text-3xl my-10'>Shop by category</h1>
-            <Tabs className='mx-16 mt-10 font-bold'>
+            <Tabs className='md:mx-16 mt-10 md:font-bold'>
 
                 <TabList>
-                    <Tab>Cooking Food Toy</Tab>
-                    <Tab>Wash Besin Toy</Tab>
-                    <Tab>Gas Stove Toy</Tab>
+                    <Tab>Food</Tab>
+                    <Tab>Besin</Tab>
+                    <Tab>Stove</Tab>
                 </TabList>
 
                 <TabPanel>

@@ -14,7 +14,7 @@ const Cart_2 = ({ cart }) => {
                     <p>Price: {price_2} </p>
                     <p>Rating: {rating_2} </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-warning rounded-lg">Buy Now</button>
+                        <button className="btn btn-warning rounded-lg">View Details</button>
                     </div>
                 </div>
             </div>

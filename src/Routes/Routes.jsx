@@ -5,6 +5,8 @@ import Blog from "../Pages/Home/Blog/Blog";
 import Login from "../Pages/Home/LogIn/Login";
 import Registration from "../Pages/Home/Registration/Registration";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import View_Food from "../Pages/View_Food/View_Food";
+import View_Besin from "../Pages/Shared/View_Besin/View_Besin";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
         path: '/registration',
         element: <Registration></Registration>
       },
+      {
+        path: 'food_details/:id',
+        element: <View_Food></View_Food>,
+        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+      },
+      {
+        path: 'food_details/:id',
+        element: <View_Besin></View_Besin>,
+        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+      }
       ]
     },
   ]);
