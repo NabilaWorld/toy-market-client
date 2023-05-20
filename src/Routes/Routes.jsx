@@ -8,6 +8,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import View_Food from "../Pages/View_Food/View_Food";
 import View_Besin from "../Pages/Shared/View_Besin/View_Besin";
 import View_Stove from "../Pages/View_Stove/View_Stove";
+import PrivateRoute from "./PrivateRoute";
+// import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -34,17 +36,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'food_details/:id',
-        element: <View_Food></View_Food>,
+        element: <PrivateRoute><View_Food></View_Food></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
       },
       {
         path: 'besin_details/:id',
-        element: <View_Besin></View_Besin>,
+        element: <PrivateRoute><View_Besin></View_Besin></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
       },
       {
       path: 'stove_details/:id',
-        element: <View_Stove></View_Stove>,
+        element: <PrivateRoute><View_Stove></View_Stove></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
       },
      
