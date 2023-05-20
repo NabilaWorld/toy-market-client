@@ -9,7 +9,9 @@ import View_Food from "../Pages/View_Food/View_Food";
 import View_Besin from "../Pages/Shared/View_Besin/View_Besin";
 import View_Stove from "../Pages/View_Stove/View_Stove";
 import PrivateRoute from "./PrivateRoute";
-// import PrivateRoutes from "./PrivateRoutes";
+import ToyAdd from "../Pages/Home/ToyAdd/ToyAdd";
+import AddToyPage from "../Pages/Home/AddToyPage/AddToyPage";
+
 
 
 const router = createBrowserRouter([
@@ -48,6 +50,17 @@ const router = createBrowserRouter([
       path: 'stove_details/:id',
         element: <PrivateRoute><View_Stove></View_Stove></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+      },
+      {
+        path: '/toyAdd',
+        element: <PrivateRoute><ToyAdd></ToyAdd></PrivateRoute>
+        
+      },
+      {
+        path: '/addToyPage',
+        element: <AddToyPage></AddToyPage>,
+       
+        
       },
      
       ]

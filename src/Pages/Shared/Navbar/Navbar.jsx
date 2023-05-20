@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import logo from '../../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../provider/AuthProvider';
+// import ToyAdd from '../../Home/ToyAdd/ToyAdd';
 
 const Navbar = () => {
     const { user, logOut, updateProfileData } = useContext(AuthContext);
@@ -14,18 +15,18 @@ const Navbar = () => {
 
 
     const renderAvatar = () => {
-        if (user ) {
-          return (
-            <div className="avatar">
-              <div className="w-12 md:ml-40 ml-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={user.photoURL} title={user.displayName} alt={user.displayName} />
-              </div>
-            </div>
-          );
-        } 
+        if (user) {
+            return (
+                <div className="avatar">
+                    <div className="w-12 md:ml-40 ml-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src={user.photoURL} title={user.displayName} alt={user.displayName} />
+                    </div>
+                </div>
+            );
+        }
 
     }
-   
+
 
     return (
         <div>
@@ -73,9 +74,13 @@ const Navbar = () => {
                                     <li>
                                         <a>My Toys</a>
                                     </li>
-                                    <li>
-                                        <a>Add A Toy</a>
-                                    </li>
+
+                                    <Link to='/addToyPage'>
+                                        <li>
+                                            <a>Add A Toy</a>
+                                        </li>
+                                    </Link>
+
                                     <li onClick={handleLogOut}>
                                         <a>Logout</a>
                                     </li>
@@ -112,18 +117,24 @@ const Navbar = () => {
                             </li>
                         </Link>
 
+                        <Link to='/toyAdd'>
                         <li>
                             <a>All Toys</a>
                         </li>
+                        </Link>
 
                         {user && (
                             <>
                                 <li>
                                     <a>My Toys</a>
                                 </li>
-                                <li>
-                                    <a>Add A Toy</a>
-                                </li>
+
+                                <Link to='/addToyPage'>
+                                    <li>
+                                        <a>Add A Toy  </a>
+                                    </li>
+                                </Link>
+
                                 <li onClick={handleLogOut}>
                                     <a>Logout</a>
                                 </li>
@@ -143,11 +154,11 @@ const Navbar = () => {
                     {user && (
                         <div className="">
                             <div className="md:mr-40">
-                            {renderAvatar()}
+                                {renderAvatar()}
                             </div>
-                            
+
                         </div>
-                    )} 
+                    )}
                 </div>
             </div>
         </div>
