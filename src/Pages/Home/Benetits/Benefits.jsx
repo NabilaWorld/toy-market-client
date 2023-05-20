@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Benefits = () => {
+    
+    useEffect(() => {
+        AOS.init();
+      }, []);
     return (
-        <div>
+        <div  data-aos="fade-up" data-aos-anchor-placement="top-center">
             <br />
             <h1 className='text-center font-bold text-xl my-10'>Girl's cooking toys offer numerous benefits for children's development:</h1>
 

@@ -4,6 +4,8 @@ import 'react-tabs/style/react-tabs.css';
 import Cart from '../Cart/Cart';
 import Cart_2 from '../Cart_2/Cart_2';
 import Cart_3 from '../Cart_3/Cart_3';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ShopCategory = () => {
 
@@ -15,8 +17,12 @@ const ShopCategory = () => {
             .catch(error => console.log(error));
     }, []);
 
+    useEffect(() => {
+        AOS.init();
+      }, []);
+
     return (
-        <div> <br /> <br />
+        <div  data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"> <br /> <br />
 
         <h1 className='text-center font-bold text-3xl my-10'>Shop by category</h1>
             <Tabs className='md:mx-16 mt-10 md:font-bold'>

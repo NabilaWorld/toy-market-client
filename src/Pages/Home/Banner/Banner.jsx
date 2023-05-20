@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import imgage from '../../../assets/banner.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Banner = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
     return (
-        <div className="relative">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center">
             <img
                 src={imgage}
                 alt="Banner"

@@ -27,7 +27,7 @@ const ToyAdd = () => {
   return (
     <div>
       <div>
-        <h1 className='text-center font-bold text-2xl my-5'>All Added data</h1>
+        <h1 className='text-center font-bold text-2xl my-5'>My Added data</h1>
 
         </div>
 
@@ -36,9 +36,7 @@ const ToyAdd = () => {
       <table className="min-w-full my-10">
                     <thead>
                         <tr>
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Seller
-                            </th>
+                            
 
                             <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
                                 Toy Name
@@ -56,9 +54,17 @@ const ToyAdd = () => {
                                 Available Quantity
                             </th>
 
-                            {/* <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Toy Name
-                            </th> */}
+                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                                Description
+                            </th>
+
+                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                                Update
+                            </th>
+
+                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                                Delete
+                            </th>
 
                             
 
@@ -68,9 +74,7 @@ const ToyAdd = () => {
                         {girls.map((item) => (
                             <tr key={item.id}>
 
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.seller_name}</div>
-                                </td>
+                                
 
                                 <td className="px-6 py-4 whitespace-no-wrap">
                                     <div className="text-sm leading-5 text-gray-900">{item.name}</div>
@@ -88,10 +92,23 @@ const ToyAdd = () => {
                                 <td className="px-6 py-4 whitespace-no-wrap">
                                     <div className="text-sm leading-5 text-gray-900">{item.quantity}</div>
                                 </td>
+
+                                <td className="px-6 py-4 whitespace-no-wrap">
+                                    <div className="text-sm leading-5 text-gray-900">{item.description}</div>
+                                </td>
                                 
-                                {/* <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.email}</div>
-                                </td> */}
+                                <td className="px-6 py-4 whitespace-no-wrap">
+                                    <div className="text-sm leading-5 text-gray-900">
+                                        <button className='btn btn-warning rounded-lg'>Update</button>
+                                    </div>
+                                </td>
+
+
+                                <td className="px-6 py-4 whitespace-no-wrap">
+                                    <div className="text-sm leading-5 text-gray-900">
+                                        <button className='btn btn-danger rounded-lg'>DELETE</button>
+                                    </div>
+                                </td>
 
                             </tr>
                         ))}

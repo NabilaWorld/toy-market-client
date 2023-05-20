@@ -17,6 +17,26 @@ const MyToy = () => {
 
     return (
         <div>
+            <div>
+                <h1 className='text-center font-bold text-2xl my-5'>My Added data</h1>
+
+                <div class="flex md:ml-[500px]">
+                    <input
+                        type="text"
+                        className="border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+                        placeholder="Search"
+                    />
+
+                    <button
+                        type="submit"
+                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-r-lg px-4 py-2"
+                    >
+                        Search
+                    </button>
+                </div>
+
+
+            </div>
             <div className="container mx-auto">
                 <table className="min-w-full my-10">
                     <thead>

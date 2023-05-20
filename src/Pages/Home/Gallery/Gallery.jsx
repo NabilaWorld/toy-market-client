@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import img1 from '../../../assets/7064300_R_SET.jpg'
 import img2 from '../../../assets/img2.jpg'
@@ -6,11 +6,16 @@ import img3 from '../../../assets/img3.jpg'
 import img4 from '../../../assets/img4.jpg'
 import img5 from '../../../assets/img5.jpg'
 import img6 from '../../../assets/img6.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
     
     return (
-        <div>
+        <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
             <br />
             <h1 className='my-16 text-center text-3xl font-bold bg-orange-300 py-3 md:mx-[500px] mx-5 px-2 rounded-full'>COOKING TOY GALLERY</h1>
             <div className='grid grid-cols-1 my-10 md:mx-16 md:grid-cols-3 gap-4 rounded-lg '>
