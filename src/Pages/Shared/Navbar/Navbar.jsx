@@ -117,7 +117,7 @@ const Navbar = () => {
                             </li>
                         </Link>
 
-                        <Link to='/toyAdd'>
+                        <Link to='/myToy'>
                         <li>
                             <a>All Toys</a>
                         </li>
@@ -125,9 +125,11 @@ const Navbar = () => {
 
                         {user && (
                             <>
-                                <li>
-                                    <a>My Toys</a>
-                                </li>
+                                <Link to='/toyAdd'>
+                                    <li>
+                                        <a>My Toys</a>
+                                    </li>
+                                </Link>
 
                                 <Link to='/addToyPage'>
                                     <li>

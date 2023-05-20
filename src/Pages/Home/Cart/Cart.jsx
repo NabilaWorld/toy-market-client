@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Cart = ({ cart }) => {
-    const {_id, picture_1, name_1, price_1, rating_1 } = cart;
+    const { _id, picture_1, name_1, price_1, rating_1 } = cart;
     return (
 
         <div className='flex md:gap-20 mt-12'>

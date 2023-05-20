@@ -1,39 +1,24 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../../provider/AuthProvider';
-import ToyRow from './ToyRow';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const ToyAdd = () => {
-  const { user } = useContext(AuthContext);
+const MyToy = () => {
+    const [cookings, setCookings] = useState([]);
 
-  const [girls, setGirls] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/myToy')
+            .then(res => res.json())
+            .then(data => setCookings(data));
+    }, []);
 
-  useEffect(() => {
-    fetchGirlsData();
-  }, []);
+    // slice data
+    const slicedCook = cookings.slice(0, 20);
 
-  const fetchGirlsData = () => {
-    const url = `http://localhost:5000/myToy?email=${user?.email}`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setGirls(data))
-      .catch(error => console.log(error));
-  };
+    // search data
 
-  // slice data
-//   const slicedGirls = girls.slice(0, 20);
-
-  // search data
-
-  return (
-    <div>
-      <div>
-        <h1 className='text-center font-bold text-2xl my-5'>All Added data</h1>
-
-        </div>
-
-      <br />
-
-      <table className="min-w-full my-10">
+    return (
+        <div>
+            <div className="container mx-auto">
+                <table className="min-w-full my-10">
                     <thead>
                         <tr>
                             <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
@@ -56,16 +41,17 @@ const ToyAdd = () => {
                                 Available Quantity
                             </th>
 
-                            {/* <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Toy Name
-                            </th> */}
+                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
 
-                            
+                                Details
+                            </th>
+
+
 
                         </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                        {girls.map((item) => (
+                        {slicedCook.map((item) => (
                             <tr key={item.id}>
 
                                 <td className="px-6 py-4 whitespace-no-wrap">
@@ -88,17 +74,20 @@ const ToyAdd = () => {
                                 <td className="px-6 py-4 whitespace-no-wrap">
                                     <div className="text-sm leading-5 text-gray-900">{item.quantity}</div>
                                 </td>
-                                
-                                {/* <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.email}</div>
-                                </td> */}
+
+                                <td className="px-6 py-4 whitespace-no-wrap">
+                                    <Link to={`/allToyDetail/${item._id}`}>
+                                        <button className='btn btn-warning rounded-lg'>Details</button>
+                                    </Link>
+                                </td>
 
                             </tr>
                         ))}
                     </tbody>
                 </table>
-    </div>
-  );
+            </div>
+        </div>
+    );
 };
 
-export default ToyAdd;
+export default MyToy;

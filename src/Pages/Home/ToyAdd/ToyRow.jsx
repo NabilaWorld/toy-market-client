@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ToyRow = ({ girl }) => {
-    const { seller_name, name, subcategory, price, quantity } = girl;
+    const { _id ,seller_name, name, subcategory, price, quantity } = girl;
     return (
         <div>
             <br />
@@ -23,7 +24,13 @@ const ToyRow = ({ girl }) => {
                         <td className="md:px-6 py-4 whitespace-nowrap">{price}</td>
                         <td className="md:px-6 py-4 whitespace-nowrap">{quantity}</td>
 
-                        <td className="md:px-6 py-4 whitespace-nowrap"> <button className='btn btn-warning rounded-lg'>Details</button> </td>
+                        <td className="md:px-6 py-4 whitespace-nowrap"> 
+
+                        <Link to={`/allToyDetail/${_id}`}>
+                           <button className='btn btn-warning rounded-lg'>Details</button> 
+                        </Link>
+                        
+                        </td>
                     </tr>
                 </tbody>
             <br />
