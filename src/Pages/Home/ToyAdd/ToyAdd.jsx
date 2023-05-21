@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const ToyAdd = () => {
   const { user } = useContext(AuthContext);
@@ -24,9 +25,7 @@ const ToyAdd = () => {
     if (proceed) {
       fetch(`http://localhost:5000/myToy/${id}`, {
         method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        
       })
         .then(response => {
           console.log(response);
@@ -124,7 +123,9 @@ const ToyAdd = () => {
 
                             <td className="px-6 py-4 whitespace-no-wrap">
                                 <div className="text-sm leading-5 text-gray-900">
-                                    <button className='btn btn-warning rounded-lg'>Update</button>
+                                    <Link to={`/updateToy/${item._id}`}>
+                                       <button className='btn btn-warning rounded-lg'>Update</button>
+                                    </Link>
                                 </div>
                             </td>
 

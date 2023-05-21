@@ -13,7 +13,7 @@ const SidePage = () => {
         
         <div>
             <br />
-            <h1 className='text-center text-3xl font-bold mt-12 mb-8'>About Out Produce</h1>
+            <h1 className='my-16 text-center text-3xl font-bold bg-orange-300 py-3 md:mx-[500px] mx-5 px-2 rounded-full'>About Out Produce</h1>
 
             <div  data-aos="flip-left" data-aos-delay="200" data-aos-anchor=".example-selector"  className='md:flex items-center mx-5 md:mx-20 my-10'>
             

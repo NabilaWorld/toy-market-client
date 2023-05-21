@@ -17,9 +17,9 @@ const Cart = ({ cart }) => {
 
                     <div className="card-actions justify-end">
 
-                        <Link to={`/food_details/${_id}`}>
-                            <button className="btn btn-warning rounded-lg">View Details</button>
-                        </Link>
+                    <Link to={`/food_details/${_id}`}>
+                        <button className="btn btn-warning rounded-lg">View Details</button>
+                    </Link>
 
                     </div>
                 </div>

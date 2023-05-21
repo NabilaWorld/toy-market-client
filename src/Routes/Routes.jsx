@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Blog from "../Pages/Home/Blog/Blog";
@@ -13,6 +13,7 @@ import ToyAdd from "../Pages/Home/ToyAdd/ToyAdd";
 import AddToyPage from "../Pages/Home/AddToyPage/AddToyPage";
 import AllToyDetail from "../Pages/Home/AllToyDetail/AllToyDetail";
 import MyToy from "../Pages/Home/MyToy/MyToy";
+import UpdateToy from "../Pages/Home/UpdateToy/UpdateToy";
 
 
 
@@ -55,10 +56,11 @@ const router = createBrowserRouter([
       },
 
       {
-      path: 'stove_details/:id',
-        element: <PrivateRoute><View_Stove></View_Stove></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
-      },
+        path: 'stove_details/:id',
+          element: <PrivateRoute><View_Stove></View_Stove></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+        },
+      
 
       {
         path: '/toyAdd',
@@ -82,6 +84,13 @@ const router = createBrowserRouter([
           element: <PrivateRoute> <MyToy></MyToy> </PrivateRoute>
           
         },
+        {
+          path: '/updateToy/:id',
+          element:  <UpdateToy></UpdateToy>,
+          loader: ({params}) => fetch(`http://localhost:5000/myToy/${params.id}`)
+
+          
+        }
      
       ]
     },

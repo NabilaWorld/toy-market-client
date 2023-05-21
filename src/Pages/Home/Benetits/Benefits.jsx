@@ -1,19 +1,28 @@
 import React, { useEffect } from 'react';
+import car1 from '../../../assets/car1.jpg'
+import car2 from '../../../assets/car2.jpg'
+import car3 from '../../../assets/car3.jpg'
+import car4 from '../../../assets/car4.jpg'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Benefits = () => {
-    
+
     useEffect(() => {
         AOS.init();
-      }, []);
+    }, []);
     return (
-        <div  data-aos="fade-up" data-aos-anchor-placement="top-center">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center">
             <br />
-            <h1 className='text-center font-bold text-xl my-10'>Girl's cooking toys offer numerous benefits for children's development:</h1>
+            <h1 className='my-16 text-center text-3xl font-bold bg-orange-300 py-3 md:mx-[200px] mx-5 px-2 rounded-full'>Girl's cooking toys offer numerous benefits for children's development:</h1>
 
             <ul className='md:mx-40 mx-5 bg-gray-100 rounded-lg border-2 p-5'>
+
+                
+
+
+
                 <li> <b>1. Skill development:</b> Cooking toys encourage the development of fine motor skills as children manipulate utensils, pots, and pans. They also learn hand-eye coordination while pouring, stirring, and measuring ingredients.</li> <br />
 
                 <li> <b>2. Creativity and imagination:</b> Cooking toys provide a platform for imaginative play, allowing children to experiment with different recipes and create their own culinary masterpieces. They can pretend to be chefs, restaurant owners, or hosts of a cooking show, fostering creativity and storytelling skills.</li> <br />
