@@ -81,12 +81,12 @@ const router = createBrowserRouter([
 
         {
           path: '/myToy',
-          element: <PrivateRoute> <MyToy></MyToy> </PrivateRoute>
+          element:  <MyToy></MyToy> 
           
         },
         {
           path: '/updateToy/:id',
-          element:  <UpdateToy></UpdateToy>,
+          element:  <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
           loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy/${params.id}`)
 
           
