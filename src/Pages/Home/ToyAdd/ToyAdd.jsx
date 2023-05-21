@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
-import ToyRow from './ToyRow';
+import Swal from 'sweetalert2';
 
 const ToyAdd = () => {
   const { user } = useContext(AuthContext);
@@ -19,103 +19,128 @@ const ToyAdd = () => {
       .catch(error => console.log(error));
   };
 
-  // slice data
-//   const slicedGirls = girls.slice(0, 20);
+  const handleDelete = id => {
+    const proceed = window.confirm('Are you want to delete');
+    if (proceed) {
+      fetch(`http://localhost:5000/myToy/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => {
+          console.log(response);
+          if (response.status === 200) {
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'DELETE SUCCESSFULLY',
+              showConfirmButton: false,
+              timer: 1500
+            });
+            fetchGirlsData(); 
+          } else {
+            throw new Error('Failed to delete the toy.');
+          }
+        })
+        .catch(error => {
+          console.log(error);
+          
+        });
+    }
+  };
+    return (
+        <div>
+            <div>
+                <h1 className='text-center font-bold text-2xl my-5'>My Added data</h1>
 
-  // search data
+            </div>
 
-  return (
-    <div>
-      <div>
-        <h1 className='text-center font-bold text-2xl my-5'>My Added data</h1>
+            <br />
 
-        </div>
+            <table className="min-w-full my-10">
+                <thead>
+                    <tr>
 
-      <br />
 
-      <table className="min-w-full my-10">
-                    <thead>
-                        <tr>
-                            
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Toy Name
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Toy Name
-                            </th>
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Sub Category
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Sub Category
-                            </th>
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Price
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Price
-                            </th>
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Available Quantity
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Available Quantity
-                            </th>
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Description
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Description
-                            </th>
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Update
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Update
-                            </th>
+                        <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
+                            Delete
+                        </th>
 
-                            <th className="px-6 py-3 bg-gray-200 text-left text-xs leading-4 font-medium text-gray-800 uppercase tracking-wider">
-                                Delete
-                            </th>
 
-                            
+
+                    </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                    {girls.map((item) => (
+                        <tr key={item.id}>
+
+
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">{item.name}</div>
+                            </td>
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">{item.subcategory}</div>
+                            </td>
+
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">{item.price}</div>
+                            </td>
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">{item.quantity}</div>
+                            </td>
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">{item.description}</div>
+                            </td>
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">
+                                    <button className='btn btn-warning rounded-lg'>Update</button>
+                                </div>
+                            </td>
+
+
+                            <td className="px-6 py-4 whitespace-no-wrap">
+                                <div className="text-sm leading-5 text-gray-900">
+                                    <button onClick={() => handleDelete(item._id)} className='btn btn-danger rounded-lg'>DELETE</button>
+                                </div>
+                            </td>
 
                         </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                        {girls.map((item) => (
-                            <tr key={item.id}>
-
-                                
-
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.name}</div>
-                                </td>
-
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.subcategory}</div>
-                                </td>
-
-
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.price}</div>
-                                </td>
-
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.quantity}</div>
-                                </td>
-
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">{item.description}</div>
-                                </td>
-                                
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">
-                                        <button className='btn btn-warning rounded-lg'>Update</button>
-                                    </div>
-                                </td>
-
-
-                                <td className="px-6 py-4 whitespace-no-wrap">
-                                    <div className="text-sm leading-5 text-gray-900">
-                                        <button className='btn btn-danger rounded-lg'>DELETE</button>
-                                    </div>
-                                </td>
-
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-    </div>
-  );
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
 };
 
 export default ToyAdd;
