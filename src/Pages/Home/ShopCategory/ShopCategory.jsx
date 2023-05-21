@@ -11,7 +11,7 @@ const ShopCategory = () => {
 
     const [carts, setCarts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/toy')
+        fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/toy')
             .then(res => res.json())
             .then(data => setCarts(data))
             .catch(error => console.log(error));

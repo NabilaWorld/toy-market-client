@@ -46,19 +46,19 @@ const router = createBrowserRouter([
       {
         path: 'food_details/:id',
         element: <PrivateRoute><View_Food></View_Food></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+        loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/toy/${params.id}`)
       },
 
       {
         path: 'besin_details/:id',
         element: <PrivateRoute><View_Besin></View_Besin></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+        loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/toy/${params.id}`)
       },
 
       {
         path: 'stove_details/:id',
           element: <PrivateRoute><View_Stove></View_Stove></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/toy/${params.id}`)
         },
       
 
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
       {
         path: '/allToyDetail/:id',
           element: <PrivateRoute> <AllToyDetail></AllToyDetail> </PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/myToy/${params.id}`)
+          loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy/${params.id}`)
         },
 
         {
@@ -87,7 +87,7 @@ const router = createBrowserRouter([
         {
           path: '/updateToy/:id',
           element:  <UpdateToy></UpdateToy>,
-          loader: ({params}) => fetch(`http://localhost:5000/myToy/${params.id}`)
+          loader: ({params}) => fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy/${params.id}`)
 
           
         }

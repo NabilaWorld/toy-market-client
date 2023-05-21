@@ -13,7 +13,7 @@ const ToyAdd = () => {
   }, []);
 
   const fetchGirlsData = () => {
-    const url = `http://localhost:5000/myToy?email=${user?.email}`;
+    const url = `https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy?email=${user?.email}`;
     fetch(url)
       .then(res => res.json())
       .then(data => setGirls(data))
@@ -23,7 +23,7 @@ const ToyAdd = () => {
   const handleDelete = id => {
     const proceed = window.confirm('Are you want to delete');
     if (proceed) {
-      fetch(`http://localhost:5000/myToy/${id}`, {
+      fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy/${id}`, {
         method: 'DELETE',
         
       })

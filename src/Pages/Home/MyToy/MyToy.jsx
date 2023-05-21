@@ -7,18 +7,18 @@ const MyToy = () => {
     const [descending, setDescending] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/myToy')
+        fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy')
             .then(res => res.json())
             .then(data => setCookings(data));
     }, []);
 
     useEffect(() => {
         if (ascending) {
-            fetch('http://localhost:5000/myToy1')
+            fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy1')
                 .then(res => res.json())
                 .then(data => setCookings(data));
         } else if (descending) {
-            fetch('http://localhost:5000/myToy2')
+            fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy2')
                 .then(res => res.json())
                 .then(data => setCookings(data));
         }
