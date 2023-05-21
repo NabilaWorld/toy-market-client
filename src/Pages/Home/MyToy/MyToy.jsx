@@ -5,6 +5,7 @@ const MyToy = () => {
     const [cookings, setCookings] = useState([]);
     const [ascending, setAscending] = useState(false);
     const [descending, setDescending] = useState(false);
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
         fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy')
@@ -34,25 +35,52 @@ const MyToy = () => {
         setAscending(false);
     };
 
+
+    // search
+    // const handleSearch = ()=>{
+    //     useEffect(()=>{
+    //         fetch(`http://localhost:5000/toySearch/${searchText}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setCookings(data)
+    //         })
+    //     }, []);
+    // }
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toySearch/${searchText}`)
+            .then(res => res.json())
+            .then(data => {
+                setCookings(data);
+            });
+    };
+
+
+
     return (
         <div>
             <div>
                 <h1 className='text-center font-bold text-2xl my-5'>My Added data</h1>
                 <div className="flex md:ml-[400px]">
                     <input
+                        onChange={(e) => setSearchText(e.target.value)}
                         type="text"
                         className="border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:border-blue-500"
                         placeholder="Search"
-                    />
+                    />{" "}
                     <button
+                        onClick={handleSearch}
                         className="bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-r-lg px-4 py-2"
                     >
                         Search
                     </button>
+
+
                     <button onClick={toggleAscending} className="btn btn-warning ml-5">
-                        Decending
+                        Ascending
                     </button>
-                    <button onClick={toggleDescending} className="btn btn-error ml-5">Ascending</button>
+
+                    <button onClick={toggleDescending} className="btn btn-error ml-5">Decending</button>
                 </div>
             </div>
             <div className="container mx-auto">
@@ -78,7 +106,7 @@ const MyToy = () => {
                                 Details
                             </th>
                         </tr>
-                    
+
 
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
