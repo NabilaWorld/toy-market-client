@@ -17,8 +17,8 @@ const Footer = () => {
                 <div>
                     <span className="font-bold mb-5">
                         Contact: <br />
-                        komola@gmail.com <br />
-                        kumud@gmail.com
+                        rahim@gmail.com <br />
+                        kolimuddin1@gmail.com
                     </span>
 
                     <div className="grid grid-flow-col gap-4">
@@ -33,14 +33,14 @@ const Footer = () => {
                 <p className='font-bold'>
                     Address:  Dhaka Zone New Market <br />
                     Road: 20/25 <br />
-                    Market: Noya Potton
+                    Market: Kola Bagan
                 </p>
 
                 
 
             </footer>
 
-            <p className=' text-center text-white pb-4 font-bold'>Copy Right</p>
+            <p className=' text-center text-white pb-4 font-bold'>Copy Right: www.girlscooking.com</p>
 
 
         </div>
