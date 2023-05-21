@@ -4,17 +4,24 @@ import Gallery from '../Gallery/Gallery';
 import SidePage from '../SidePage/SidePage';
 import Benefits from '../Benetits/Benefits';
 import ShopCategory from '../ShopCategory/ShopCategory';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 const Home = () => {
     return (
-        <div>
+        <HelmetProvider>
+            <div>
+            
+           
             <Banner></Banner>
+            
             <Gallery></Gallery>
             <ShopCategory></ShopCategory>
             <SidePage></SidePage>
             <Benefits></Benefits>
+           
         </div>
+        </HelmetProvider>
     );
 };
 

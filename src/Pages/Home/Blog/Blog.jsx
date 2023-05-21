@@ -1,8 +1,10 @@
 import React from 'react';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Blog = () => {
     return (
-        <div className='mx-2 md:mx-40'>
+        <HelmetProvider>
+            <div className='mx-2 md:mx-40'>
             <h1 className='text-center font-bold text-2xl my-10'>Question And Answer Section</h1>
 
             <div>
@@ -45,6 +47,7 @@ const Blog = () => {
                     Aggregation operations in MongoDB can be used for tasks such as generating reports, performing data analysis, calculating statistics, and creating complex queries. It provides a flexible and efficient way to manipulate and extract insights from large amounts of data stored in MongoDB collections.</p>
             </div> <br />
         </div>
+        </HelmetProvider>
     );
 };
 

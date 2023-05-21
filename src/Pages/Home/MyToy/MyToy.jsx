@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 const MyToy = () => {
     const [cookings, setCookings] = useState([]);
-    const [ascending, setAscending] = useState(false);
-    const [descending, setDescending] = useState(false);
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
@@ -13,47 +11,16 @@ const MyToy = () => {
             .then(data => setCookings(data));
     }, []);
 
-    useEffect(() => {
-        if (ascending) {
-            fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy1')
-                .then(res => res.json())
-                .then(data => setCookings(data));
-        } else if (descending) {
-            fetch('https://b7a11-toy-marketplace-server-side-three.vercel.app/myToy2')
-                .then(res => res.json())
-                .then(data => setCookings(data));
-        }
-    }, [ascending, descending]);
-
-    const toggleAscending = () => {
-        setAscending(!ascending);
-        setDescending(false);
-    };
-
-    const toggleDescending = () => {
-        setDescending(!descending);
-        setAscending(false);
-    };
-
-
-    // search
-    // const handleSearch = ()=>{
-    //     useEffect(()=>{
-    //         fetch(`http://localhost:5000/toySearch/${searchText}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setCookings(data)
-    //         })
-    //     }, []);
-    // }
-
-    const handleSearch = () => {
-        fetch(`http://localhost:5000/toySearch/${searchText}`)
-            .then(res => res.json())
-            .then(data => {
-                setCookings(data);
-            });
-    };
+    
+// search
+const handleSearch = () => {
+    console.log(searchText)
+    fetch(`https://b7a11-toy-marketplace-server-side-three.vercel.app/toySearch/${searchText}`)  
+      .then(res => res.json())
+      .then(data => {
+        setCookings(data);
+      });
+  };
 
 
 
@@ -76,11 +43,7 @@ const MyToy = () => {
                     </button>
 
 
-                    <button onClick={toggleAscending} className="btn btn-warning ml-5">
-                        Ascending
-                    </button>
-
-                    <button onClick={toggleDescending} className="btn btn-error ml-5">Decending</button>
+                   
                 </div>
             </div>
             <div className="container mx-auto">
